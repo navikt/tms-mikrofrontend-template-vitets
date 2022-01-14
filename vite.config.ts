@@ -27,7 +27,7 @@ export default ({ command }) => ({
   build: {
     cssCodeSplit: false,
     rollupOptions: {
-      input: "src/App.tsx",
+      input: "src/Mikrofrontend.tsx",
       output: {
         manualChunks: false,
         entryFileNames: `bundle.js`,
