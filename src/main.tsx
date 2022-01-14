@@ -1,14 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
-import App from "./App";
+import Mikrofrontend from "./Mikrofrontend";
 import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <QueryClientProvider client={new QueryClient()}>
-      <App />
-    </QueryClientProvider>
+    <Mikrofrontend />
   </React.StrictMode>,
   document.getElementById("root")
 );
