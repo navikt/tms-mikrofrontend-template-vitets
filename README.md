@@ -17,10 +17,6 @@ Kan brukes som utgangspunkt for å opprette nye mikrofrontends i Min Side.
 4. Sett opp secrets, som default er det lagt opp til at secrets kan hentes fra `<appnavn>-secrets`
 5. Velg riktig ingress til appen i nais.yaml
 
-# Workflows
-
-Team Min Side bruker pb-workflow-authority for å sette opp workflows, husk å legge det til i prosjektet.
-
 # Kom i gang
 
 1. Bygg tms-mikrofrontend-template ved å kjøre npm run build
