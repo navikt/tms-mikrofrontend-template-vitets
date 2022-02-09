@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react";
 import { viteMockServe } from "vite-plugin-mock";
 import { rollupImportMapPlugin } from "rollup-plugin-import-map";
 
-const reactUrl = "https://asset-bucket-proxy.dev.intern.nav.no/asset/react/v/17/index.esm.js";
-const reactDomUrl = "https://asset-bucket-proxy.dev.intern.nav.no/asset/react-dom/v/17/index.esm.js";
+const reactUrl = "https://min-side-assets.dev.intern.nav.no/asset/react/v/17/index.esm.js";
+const reactDomUrl = "https://min-side-assets.dev.intern.nav.no/asset/react-dom/v/17/index.esm.js";
 
 const imports = {
   react: reactUrl,
