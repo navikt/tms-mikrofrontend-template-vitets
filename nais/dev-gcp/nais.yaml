@@ -8,7 +8,7 @@ metadata:
 spec:
   envFrom:
     - secret: tms-mikrofrontend-template-secrets
-  image: { { version } }
+  image: {{version}}
   port: 7100
   liveness:
     path: /tms-mikrofrontend-template/internal/isAlive
