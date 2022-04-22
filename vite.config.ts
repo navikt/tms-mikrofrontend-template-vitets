@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { viteMockServe } from "vite-plugin-mock";
 import { rollupImportMapPlugin } from "rollup-plugin-import-map";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import { resolve } from "path";
 
 const reactUrl = "https://min-side-assets.dev.intern.nav.no/react/17/esm/index.js";
 const reactDomUrl = "https://min-side-assets.dev.intern.nav.no/react-dom/17/esm/index.js";
@@ -14,6 +16,7 @@ const imports = {
 export default ({ command }) => ({
   plugins: [
     react(),
+    cssInjectedByJsPlugin(),
     viteMockServe({
       mockPath: "mock",
       localEnabled: command === "serve",
@@ -25,15 +28,11 @@ export default ({ command }) => ({
     },
   ],
   build: {
-    cssCodeSplit: false,
-    rollupOptions: {
-      input: "src/Mikrofrontend.tsx",
-      output: {
-        manualChunks: false,
-        entryFileNames: `bundle.js`,
-        chunkFileNames: `bundle.js`,
-        assetFileNames: `bundle.[ext]`,
-      },
+    lib: {
+      entry: resolve(__dirname, "src/Mikrofrontend.jsx"),
+      name: "tms-mikrofrontend-template",
+      formats: ["es"],
+      fileName: () => `bundle.js`,
     },
   },
   test: {
