@@ -31,7 +31,7 @@ export default ({ command }) => ({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/Mikrofrontend.jsx"),
+      entry: resolve(__dirname, "src/Mikrofrontend.tsx"),
       name: "tms-mikrofrontend-template",
       formats: ["es"],
       fileName: () => `bundle.js`,
