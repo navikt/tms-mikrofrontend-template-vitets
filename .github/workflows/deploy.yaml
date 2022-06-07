@@ -4,7 +4,7 @@ on:
     branches:
       - "main"
 env:
-  "IMAGE": "docker.pkg.github.com/${{ github.repository }}/tms-mikrofrontend-template:${{ github.sha }}"
+  "IMAGE": "docker.pkg.github.com/${{ github.repository }}/tms-mikrofrontend-template-vitets:${{ github.sha }}"
 jobs:
   build:
     name: "build"
@@ -17,8 +17,7 @@ jobs:
       - name: "Build application"
         run: "npm run build"
       - name: "Build and publish Docker image"
-        run:
-          "docker build --pull --tag ${IMAGE} . && echo $GITHUB_TOKEN | docker login\
+        run: "docker build --pull --tag ${IMAGE} . && echo $GITHUB_TOKEN | docker login\
           \ --username $GITHUB_REPOSITORY --password-stdin https://docker.pkg.github.com\
           \ && docker push ${IMAGE}"
         env:
